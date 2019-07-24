@@ -10,7 +10,7 @@ namespace Homework
     {
         static void Main(string[] args)
         {
-            var program = new Bank();
+            var program = new BankProgram();
             program.Start();
         }
     }

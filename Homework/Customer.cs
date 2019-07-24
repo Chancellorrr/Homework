@@ -6,20 +6,27 @@ using System.Threading.Tasks;
 
 namespace Homework
 {
-    public class Customer 
+    public class Customer
     {
-        public Customer(Guid name, string password)
+        public Customer(string name, string password)
         {
             Accounts = new List<BankAccount>();
             Password = password;
             Name = name;
         }
 
-        public Guid Name { get; set; }
-        public List<BankAccount> Accounts { get; set; }
+        public string Name { get; private set; }
+        public List<BankAccount> Accounts { get; private set; }
         public string Password { get; private set; }
 
+        public void AddAccount(BankAccount account)
+        { 
+            Accounts.Add(account);
+        }
 
-
+        public void DeleteAccount(BankAccount account)
+        {
+            Accounts.Remove(account);
+        }
     }
 }
