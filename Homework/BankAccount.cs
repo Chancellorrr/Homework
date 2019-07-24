@@ -27,7 +27,7 @@ namespace Homework
 
         public void Withdrawal(Transaction transaction)
         {
-            if (transaction.Amount < AmountLeft)
+            if (transaction.Amount > AmountLeft)
             {
                 throw new InvalidOperationException("Insufficient Funds");
             }
