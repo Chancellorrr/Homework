@@ -29,8 +29,8 @@ namespace Homework
             customer.AddAccount(account1);
             customer.AddAccount(account2);
 
-            var transaction1 = new Transaction("Withdrawal", "Description about transaction", 1000, account1);
-            var transaction2 = new Transaction("Deposit", "Description about transaction", 1000, account2);
+            var transaction1 = new Transaction("Withdrawal", "Description about transaction", 1000, account1, TransactionType.Withdrawal);
+            var transaction2 = new Transaction("Deposit", "Description about transaction", 1000, account2, TransactionType.Deposit);
 
             account1.Withdrawal(transaction1);
             account2.Deposit(transaction2);
