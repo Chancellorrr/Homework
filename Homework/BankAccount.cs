@@ -21,13 +21,17 @@ namespace Homework
 
         public void Deposit(Transaction transaction)
         {
-            AmountLeft -= transaction.Amount;
+            AmountLeft += transaction.Amount;
             TransactionHistory.Add(transaction);
         }
 
         public void Withdrawal(Transaction transaction)
         {
-            AmountLeft += transaction.Amount;
+            if (transaction.Amount < AmountLeft)
+            {
+                throw new InvalidOperationException("Insufficient Funds");
+            }
+            AmountLeft -= transaction.Amount;
             TransactionHistory.Add(transaction);
 
         }
